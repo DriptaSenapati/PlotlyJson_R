@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js" charset="utf-8"></script>
+    <title>Plot Test</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="tester"></div>
+
+    <div id="tester2"></div>
+</body>
+<script>
+    fetch("data.json")
+    .then((res) => res.json())
+    .then((data) => {
+        const target = document.getElementById("tester");
+        Plotly.newPlot(target,data)
+    })
+
+    fetch("data2.json")
+    .then((res) => res.json())
+    .then((data) => {
+        const target2 = document.getElementById("tester2");
+        Plotly.newPlot(target2,data)
+    })
+</script>
+
+</html>
