@@ -1,6 +1,5 @@
 library(plotly)
-library(jsonlite)
-library(rjson)
+library(rjson) ##use rjson only to save json file
 
 fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length,
                marker = list(size = 10,
